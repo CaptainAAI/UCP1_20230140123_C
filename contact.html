@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak Kami</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="contact-page">
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="about.html">Tentang</a></li>
+                <li><a href="features.html">Fitur</a></li>
+                <li><a href="contact.html" class="active">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-form animated">
+            <h1>Hubungi Kami</h1>
+            <p>Daftarkan dirimu dan mulai petualangan belajar bahasa asing dengan mudah!</p>
+            <form onsubmit="showAlert(); return false;">
+                <label for="name">Nama:</label>
+                <input type="text" id="name" name="name" placeholder="Nama Lengkap" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Alamat Email" required>
+
+                <label for="interest">Minat Belajar:</label>
+                <input type="text" id="interest" name="interest" placeholder="Bahasa yang ingin dipelajari" required>
+
+                <button type="submit" class="ripple">Kirim Pesan</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Belajar Bahasa Asing Online. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showAlert() {
+            alert("Pesan Anda Terkirim!");
+        }
+
+        // Ripple effect button
+        const buttons = document.querySelectorAll('.ripple');
+        buttons.forEach(btn => {
+            btn.addEventListener('click', function (e) {
+                const circle = document.createElement('span');
+                circle.classList.add('ripple-effect');
+                const x = e.clientX - e.target.offsetLeft;
+                const y = e.clientY - e.target.offsetTop;
+                circle.style.left = `${x}px`;
+                circle.style.top = `${y}px`;
+                this.appendChild(circle);
+                setTimeout(() => circle.remove(), 600);
+            });
+        });
+    </script>
+
+</body>
+
+
+<script>
+    window.onload = function() {
+        alert("Ikuti tantangan kuis mingguan & menangkan hadiah menarik!");
+    }
+</script>
+</html>
+
